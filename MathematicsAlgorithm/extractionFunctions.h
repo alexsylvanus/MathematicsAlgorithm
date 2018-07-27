@@ -33,18 +33,16 @@ typedef struct {
 // Global Variables
 
 // Functions
-
+// Extractions from Line Operation
 void numberExtraction(string s, vector<float> &ret);
 void operatorExtraction(string s, vector<char> &ret);
 void lineOperationStructExtraction(string s, line_operation_extraction_t &soe);
+
+// 
 void floatVectorRemoveElement(vector<float> &vecF, int element);
 void charVectorRemoveElement(vector<char> &vecF, int element);
 void insertValueInOperation(float val, string &oper);
-void computeSingleOperation(string oper, string &ret);
 void clearLOE(line_operation_extraction_t &loe);
-void evaluateSingleLineOperationExtraction(line_operation_extraction_t loe, string &ret);
-void extractDeepestSingleOperation(string s, vector<line_operation_extraction_t> &loes, vector<int> &LOE_location);
-void evaluateLineOperationExtractions(string &s);
 
 
 #endif // !EXTRACTION_FUNCTIONS_H

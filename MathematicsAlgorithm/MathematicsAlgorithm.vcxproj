@@ -115,10 +115,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="evaluate.h" />
     <ClInclude Include="extractionFunctions.h" />
     <ClInclude Include="verificationFunctions.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="evaluate.cpp" />
     <ClCompile Include="extractionFunctions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="verificationFunctions.cpp" />

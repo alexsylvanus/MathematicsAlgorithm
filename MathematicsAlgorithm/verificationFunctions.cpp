@@ -38,29 +38,37 @@ bool isCharacterDigit(char c) {
 }
 
 bool checkValidSingleOperationStr(string s) {
+	// Declare return variable
 	bool ret = true;
 	// loop over string
 	int sz = s.size();
 	int op_cnt = 0;
-	// Check if first or last character is an operator, fail if true
-	if (isCharacterOperator(s[0]) || isCharacterOperator(s[sz - 1])) {
+
+	// Check if first or last character is an operator, first not being a negative indicator, fail if true
+	if (isCharacterOperator(s[0]) && (s[0] != '-')) {
+		return false;
+	}
+	else if (isCharacterOperator(s[sz - 1])) {
 		return false;
 	}
 
 	for (int i = 0; i < sz; i++) {
+		// If an invalid character is detected
 		if (!checkSingleOperationValidCharacter(s[i])) {
 			return false;
 		}
-		if (isCharacterOperator(s[i])) {
-			if (!isCharacterDigit(s[i - 1]) || !isCharacterDigit(s[i + 1])) {
-				return false;
-			}
-			op_cnt++;
-		}
 
+		// Check that when an operator is detected, prior to the operator is a digit, and after the operator is either a '-' or a digit
+		if (isCharacterOperator(s[i])) {
+			if (i > 0) {
+				if (!isCharacterDigit(s[i - 1]) && s[i] != '-') {
+					return false;
+				}
+				else if (!isCharacterDigit(s[i+1]) && s[i+1] != '-') {
+					return false;
+				}
+			}
+		}
 	}
-	//if (op_cnt > 1) {
-	//	ret = false;
-	//}
 	return ret;
 }
