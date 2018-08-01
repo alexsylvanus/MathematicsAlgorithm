@@ -13,7 +13,6 @@ Date: 7/23/2018
 #include <iostream>
 #include <string>
 #include <vector>
-
 #include "evaluate.h"
 
 const string inpt = "-2.5+(1.05+((x-4.7*4)/(x-6)+1.9)*2.19)*5.8";
@@ -21,6 +20,8 @@ const string inpt2 = "19.5-x+4.2*4.8/x+x*2.5+1.4";
 const string inpt3 = "4.58-6.7/-3.7*x+5.58";
 
 using namespace std;
+
+/* This is to check that I can update code locally and add it to the repository */
 
 int main() {
 
@@ -37,14 +38,12 @@ int main() {
 	line_operation_extraction_t loe;
 	cout << s << endl;
 	if (checkValidSingleOperationStr(s)) {
-		cout << "Valid Operation" << endl;
-		// lineOperationStructExtraction(s, loe);
-		// evaluateSingleLineOperationExtraction(loe, s1);
+		cout << "Valid Single Operation" << endl;
 		evaluateSingleLOE(s);
 		cout << s << endl;
 	}
 	else {
-		cout << "Invalid Operation" << endl;
+		// cout << "Invalid Operation" << endl;
 		evaluateExpression(s);
 		cout << s << endl;
 	}
