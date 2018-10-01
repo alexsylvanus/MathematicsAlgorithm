@@ -31,7 +31,7 @@ using namespace std;
 typedef struct {
 	float x;				// Operation being evaluated at value of this variable
 	string operation_Str;	// String to convert to mathematical operation
-}operation_t;
+} operation_t;
 
 // Global Variables
 const string single_operation_valid_chars = "0123456789.+-*/";
